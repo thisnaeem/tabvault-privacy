@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TabVault — Privacy Policy</title>
+<style>body{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.65;color:#1c1c28}h1{color:#3b2d8f}h2{color:#3b2d8f;margin-top:32px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ddd;padding:8px 10px;text-align:left;vertical-align:top}code{background:#f0eefc;padding:1px 5px;border-radius:4px}</style>
+</head><body><h1>TabVault — Privacy Policy</h1>
+<p><em>Last updated: October 22, 2026</em></p>
+<p>TabVault — Session Manager &amp; Tab Saver is built to be private by construction: it has no servers, no accounts, no analytics, and it never sends your data anywhere.</p>
+<h2>What TabVault stores</h2>
+<p>TabVault stores the following <strong>only on your device</strong>, in your browser's local storage (IndexedDB and <code>chrome.storage.local</code>):</p>
+<ul>
+<li>Tab URLs, page titles, and favicon URLs — for the snapshots, sessions, and closed-window records you see in the app.</li>
+<li>Tab order, pinned state, and tab-group titles/colors, so restores match how your windows were arranged.</li>
+<li>Your settings (snapshot interval, retention periods, theme).</li>
+</ul>
+<p>TabVault never stores page content, form data, passwords, cookies, or browsing data from private (incognito) windows — incognito windows are never captured at all.</p>
+<h2>What TabVault does NOT do</h2>
+<ul>
+<li>It does not collect, transmit, sell, or share any personal data.</li>
+<li>It has no analytics, tracking, ads, or third-party code phoning home.</li>
+<li>It does not use remote code. All code is bundled in the extension.</li>
+<li>It declares <strong>no host permissions</strong> and injects <strong>no content scripts</strong>, so it cannot read the pages you visit.</li>
+</ul>
+<h2>Permissions, one by one</h2>
+<table>
+<tr><th>Permission</th><th>Why TabVault needs it</th></tr>
+<tr><td><code>tabs</code></td><td>List your open tabs (URL/title) to snapshot them and to reopen tabs when you restore a session.</td></tr>
+<tr><td><code>tabGroups</code></td><td>Read group titles/colors and recreate groups on restore.</td></tr>
+<tr><td><code>storage</code></td><td>Save your settings in <code>chrome.storage.local</code>.</td></tr>
+<tr><td><code>alarms</code></td><td>Schedule periodic automatic snapshots.</td></tr>
+<tr><td><code>unlimitedStorage</code></td><td>Keep snapshot history in IndexedDB without Chrome evicting it under storage pressure.</td></tr>
+<tr><td><code>sidePanel</code></td><td>Show the TabVault side panel.</td></tr>
+<tr><td><code>favicon</code></td><td>Display site icons for saved tabs via Chrome's built-in favicon service.</td></tr>
+</table>
+<h2>Deleting your data</h2>
+<ul>
+<li>Delete individual snapshots, sessions, and recovery records in the Manager at any time.</li>
+<li>Automatic history is pruned after the retention period you set (default 7 days; closed windows 14 days).</li>
+<li>Removing the extension deletes everything it stored.</li>
+</ul>
+<h2>Contact</h2>
+<p>Questions: use the support contact on TabVault's Chrome Web Store listing.</p></body></html>
