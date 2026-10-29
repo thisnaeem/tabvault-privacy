@@ -1,17 +1,27 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TabVault — Privacy Policy</title>
-<style>body{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.65;color:#1c1c28}h1{color:#3b2d8f}h2{color:#3b2d8f;margin-top:32px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ddd;padding:8px 10px;text-align:left;vertical-align:top}code{background:#f0eefc;padding:1px 5px;border-radius:4px}</style>
-</head><body><h1>TabVault — Privacy Policy</h1>
-<p><em>Last updated: October 22, 2026</em></p>
+<style>
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6;color:#1a1a1a}
+h1{font-size:1.8em}h2{font-size:1.3em;margin-top:1.6em}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccc;padding:8px;text-align:left;vertical-align:top}
+code{background:#f2f2f2;padding:1px 4px;border-radius:3px}
+em{color:#555}
+</style>
+</head>
+<body>
+<h1>TabVault — Privacy Policy</h1>
+<p><em>Last updated: October 24, 2026</em></p>
 <p>TabVault — Session Manager &amp; Tab Saver is built to be private by construction: it has no servers, no accounts, no analytics, and it never sends your data anywhere.</p>
 <h2>What TabVault stores</h2>
 <p>TabVault stores the following <strong>only on your device</strong>, in your browser's local storage (IndexedDB and <code>chrome.storage.local</code>):</p>
 <ul>
 <li>Tab URLs, page titles, and favicon URLs — for the snapshots, sessions, and closed-window records you see in the app.</li>
 <li>Tab order, pinned state, and tab-group titles/colors, so restores match how your windows were arranged.</li>
-<li>Your settings (snapshot interval, retention periods, theme).</li>
+<li>Your settings (snapshot interval, retention periods, theme, accent, auto-suspend threshold) and lifetime feature counters (how many snapshots, restores, suspensions — counts only, no content).</li>
 </ul>
 <p>TabVault never stores page content, form data, passwords, cookies, or browsing data from private (incognito) windows — incognito windows are never captured at all.</p>
 <h2>What TabVault does NOT do</h2>
@@ -19,7 +29,7 @@
 <li>It does not collect, transmit, sell, or share any personal data.</li>
 <li>It has no analytics, tracking, ads, or third-party code phoning home.</li>
 <li>It does not use remote code. All code is bundled in the extension.</li>
-<li>It declares <strong>no host permissions</strong> and injects <strong>no content scripts</strong>, so it cannot read the pages you visit.</li>
+<li>By default it declares <strong>no required host permissions</strong> and injects <strong>no content scripts</strong>, so it cannot read the pages you visit. From v1.0.2, an OPTIONAL host permission exists for one feature only (see below): it is off by default, granted only if you turn on the on-page screenshot button in Settings, and it can be turned off again at any time.</li>
 </ul>
 <h2>Permissions, one by one</h2>
 <table>
@@ -31,6 +41,9 @@
 <tr><td><code>unlimitedStorage</code></td><td>Keep snapshot history in IndexedDB without Chrome evicting it under storage pressure.</td></tr>
 <tr><td><code>sidePanel</code></td><td>Show the TabVault side panel.</td></tr>
 <tr><td><code>favicon</code></td><td>Display site icons for saved tabs via Chrome's built-in favicon service.</td></tr>
+<tr><td><code>activeTab</code></td><td>Only for the full-page screenshot you explicitly trigger (popup Screenshot button): temporarily access the tab you are on so its visible area can be captured.</td></tr>
+<tr><td><code>scripting</code></td><td>Only for the full-page screenshot you explicitly trigger: scroll the captured page slice by slice and scroll it back afterwards.</td></tr>
+<tr><td>Optional host access (<code>&lt;all_urls&gt;</code>, off by default)</td><td>Only if you turn on "Screenshot button on every website" in Settings: show a small camera button on web pages so you can screenshot that page with one click. The button does not read page content, and screenshots are downloaded to your device only — they are never sent anywhere. Turn the toggle off and the button and the permission go away.</td></tr>
 </table>
 <h2>Deleting your data</h2>
 <ul>
@@ -39,4 +52,6 @@
 <li>Removing the extension deletes everything it stored.</li>
 </ul>
 <h2>Contact</h2>
-<p>Questions: use the support contact on TabVault's Chrome Web Store listing.</p></body></html>
+<p>Questions: use the support contact on TabVault's Chrome Web Store listing.</p>
+</body>
+</html>
